@@ -1,61 +1,72 @@
-import { foodTruck } from "../fakeData/foodTruckDB.js";
+import { menuItems } from "../fakeData/foodTruckDB.js";
 
-// Stage 1: Reading object properties
+// Stage 2: Reading arrays with indexes and length
 //
-// Run this file with:  node exercises/stage-1-exercise.js
+// Run this file with:  node exercises/stage-2-exercise.js
 // Each console.log below shows the expected output as a comment.
 // Implement the functions until all outputs match.
 
 // ---------------------------------------------------------------------------
 // Exercise 1
-// Write a function called getTruckName.
-// It receives a truck object and returns the value of its name property.
-// Expected output: "Chrome and Burger"
+// Write a function called countMenuItems.
+// It receives an array of menu items and returns how many items are in the array.
+// Expected output: 5
 
-function getTruckName(truck) {
-  // TODO: your code here
+function countMenuItems(items) {
+return items.length;
 }
 
-console.log(getTruckName(foodTruck));
-// "Chrome and Burger"
+console.log(countMenuItems(menuItems));
+// 5
 
 // ---------------------------------------------------------------------------
 // Exercise 2
-// Write a function called isTruckOpen.
-// It receives a truck object and returns the value of its isOpen property.
-// Do not use an if statement — isOpen is already a Boolean.
-// Expected output: true
+// Write a function called getFirstMenuItem.
+// It receives an array of menu items and returns the first item object.
+// Expected output: { id: 1, name: "Chrome Classic", category: "burger", price: 180, isAvailable: true, stock: 12 }
 
-function isTruckOpen(truck) {
-  // TODO: your code here
+function getFirstMenuItem(items) {
+ return items[0];
 }
-
-console.log(isTruckOpen(foodTruck));
-// true
+console.log(getFirstMenuItem(menuItems));
+// { id: 1, name: 'Chrome Classic', category: 'burger', price: 180, isAvailable: true, stock: 12 }
 
 // ---------------------------------------------------------------------------
 // Exercise 3
-// Write a function called getDailySalesTarget.
-// It receives a truck object and returns the value of its dailySalesTarget property.
-// Expected output: 10000
+// Write a function called getFirstItemName.
+// It receives an array of menu items and returns the name of the first item.
+// Expected output: "Chrome Classic"
 
-function getDailySalesTarget(truck) {
-  // TODO: your code here
+function getFirstItemName(items) {
+  return items[0].name;
 }
 
-console.log(getDailySalesTarget(foodTruck));
-// 10000
+console.log(getFirstItemName(menuItems));
+// "Chrome Classic"
 
 // ---------------------------------------------------------------------------
 // Exercise 4
-// Write a function called describeTruck.
-// It receives a truck object and returns a sentence using a template literal:
-// "<name> is located in <location>."
-// Expected output: "Chrome and Burger is located in Bangkok."
+// Write a function called getLastMenuItem.
+// It receives an array of menu items and returns the last item object.
+// Do not hard-code the index — use items.length to calculate it.
+// Expected output: { id: 5, name: "Spicy Gear Burger", ... }
 
-function describeTruck(truck) {
-  // TODO: your code here
+function getLastMenuItem(items) {
+  return items[items.length-1];
 }
 
-console.log(describeTruck(foodTruck));
-// "Chrome and Burger is located in Bangkok."
+console.log(getLastMenuItem(menuItems));
+// { id: 5, name: 'Spicy Gear Burger', category: 'burger', price: 220, isAvailable: true, stock: 8 }
+
+// ---------------------------------------------------------------------------
+// Exercise 5
+// Write a function called getLastItemPrice.
+// It receives an array of menu items and returns the price of the last item.
+// Expected output: 220
+
+function getLastItemPrice(items) {
+  return items[items.length-1].price;
+}
+
+console.log(getLastItemPrice(menuItems));
+// 220
