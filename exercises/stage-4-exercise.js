@@ -17,7 +17,7 @@ import { menuItems, orders } from "../fakeData/foodTruckDB.js";
 // Expected output: one item — Neon Cola
 
 function getUnavailableItems(items) {
-  // TODO: your code here
+return items.filter(items => items.isAvailable === false);
 }
 
 console.log(getUnavailableItems(menuItems));
@@ -30,7 +30,7 @@ console.log(getUnavailableItems(menuItems));
 // Expected output: Chrome Classic (180), Crispy Circuit Fries (90), Neon Cola (50)
 
 function getAffordableItems(items) {
-  // TODO: your code here
+return items.filter(items => items.price < 200);
 }
 
 console.log(getAffordableItems(menuItems));
@@ -43,7 +43,7 @@ console.log(getAffordableItems(menuItems));
 // Expected output: Double Engine (6), Neon Cola (0), Spicy Gear Burger (8)
 
 function getLowStockItems(items) {
-  // TODO: your code here
+return items.filter(items => items.stock < 10);
 }
 
 console.log(getLowStockItems(menuItems));
@@ -56,7 +56,7 @@ console.log(getLowStockItems(menuItems));
 // Expected output: ORD-001 (Mali) and ORD-003 (Nina)
 
 function getCompletedOrders(orderList) {
-  // TODO: your code here
+return orderList.filter(orderList => orderList.status === "completed");
 }
 
 console.log(getCompletedOrders(orders));
@@ -72,8 +72,8 @@ console.log(getCompletedOrders(orders));
 // Expected output: Chrome Classic, Double Engine, Spicy Gear Burger
 
 function getAvailableBurgers(items) {
-  // TODO: your code here
-}
+return items.filter(items => items.category==="burger" && items.isAvailable === true);
+};
 
 console.log(getAvailableBurgers(menuItems));
 // [ { name: 'Chrome Classic', category: 'burger', isAvailable: true, ... }, { name: 'Double Engine', ... }, { name: 'Spicy Gear Burger', ... } ]
@@ -87,7 +87,8 @@ console.log(getAvailableBurgers(menuItems));
 // Expected output for maximumPrice 220: Chrome Classic (180) and Spicy Gear Burger (220)
 
 function getBurgersWithinBudget(items, maximumPrice) {
-  // TODO: your code here
+maximumPrice = 220;
+return items.filter(items=> items.category==="burger" && items.price <= maximumPrice);
 }
 
 console.log(getBurgersWithinBudget(menuItems, 220));
