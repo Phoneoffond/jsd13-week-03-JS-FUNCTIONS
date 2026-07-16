@@ -18,8 +18,8 @@ import { menuItems, orders } from "../fakeData/foodTruckDB.js";
 // Expected output: { id: 2, name: "Double Engine", ... }
 
 function findMenuItemById(items, itemId) {
-  // TODO: your code here
-}
+  return items.find(items=>items.id===itemId);
+} 
 
 console.log(findMenuItemById(menuItems, 2));
 // { id: 2, name: 'Double Engine', category: 'burger', price: 250, isAvailable: true, stock: 6 }
@@ -31,7 +31,7 @@ console.log(findMenuItemById(menuItems, 2));
 // Expected output: { id: 5, name: "Spicy Gear Burger", ... }
 
 function findMenuItemByName(items, itemName) {
-  // TODO: your code here
+  return items.find(items=>items.name===itemName);
 }
 
 console.log(findMenuItemByName(menuItems, "Spicy Gear Burger"));
@@ -44,7 +44,7 @@ console.log(findMenuItemByName(menuItems, "Spicy Gear Burger"));
 // Expected output: { id: "ORD-002", customerName: "Somchai", status: "pending" }
 
 function findOrderById(orderList, orderId) {
-  // TODO: your code here
+return orderList.find(orderList => orderList.id ===orderId);
 }
 
 console.log(findOrderById(orders, "ORD-002"));
@@ -61,7 +61,12 @@ console.log(findOrderById(orders, "ORD-002"));
 //   getMenuItemNameById(menuItems, 99) → "Menu item not found"
 
 function getMenuItemNameById(items, itemId) {
-  // TODO: your code here
+let num = items.find(items=> items.id === itemId);
+if (itemId = num) {
+return num.name;
+}
+return `Menu item not found`;
+
 }
 
 console.log(getMenuItemNameById(menuItems, 2));
